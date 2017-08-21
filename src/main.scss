@@ -1,0 +1,363 @@
+$primaryColor: #212121;
+$secondaryColor: #0277BD;
+$brokenWhite: #f1f1f1;
+
+
+$primaryColorLight: #313131;
+
+html, body, #root {
+	font-family: monospace;
+	width: 100%;
+	height: 100%;
+	font-size: 16px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+[role="button"] {
+	cursor: pointer;
+	font-family: monospace;
+}
+
+button {
+	background: none;
+	font-family: monospace;
+	border: 2px solid #335;
+	padding: .5rem 1rem;
+	border-radius: 3px;
+	font-size: 1.25em;
+	cursor: pointer;
+	transition: .25s ease;
+	margin-bottom: 1rem;
+
+	&[disabled] {
+		opacity: .25;
+		cursor: not-allowed;
+	}
+
+	&:not([disabled]):hover {
+		background-color: #333;
+		color: white;
+	}
+}
+
+input[type="text"] {
+	padding: .25rem .5rem;
+	font-size: 1.2em;
+	font-family: monospace;
+	width: calc(100% - 1rem - 2px);
+	display: block;
+	margin: 0;
+	border: 1px solid #bbb;
+	text-align: center;
+}
+
+
+
+.container {
+	display: flex;
+	height: 100%;
+	min-height: 100%;
+	background-color: white;
+
+	.left-bar {
+		background-color: $primaryColor;
+		color: $secondaryColor;
+    box-shadow: 0px 0px 6px #333;
+    position: relative;
+    z-index: 200;
+
+		[data-section-id] {
+	    padding: 2rem 1.5rem;
+	    cursor: pointer;
+	    background-color: transparent;
+	    transition: .15s ease-out;
+	    font-weight: bold;
+	    font-size: 1.25em;
+	    letter-spacing: 0.025em;
+
+			&:hover {
+				background-color: $primaryColorLight;
+			}
+			&.active {
+				background-color: $brokenWhite;
+			}
+		}
+	}
+
+	.sections {
+		width: 100%;
+		height: 100%;
+		position: relative;
+    z-index: 100;
+		perspective: 1000px;
+		perspective-origin: center center;
+
+		.section {
+			position: absolute;
+	    left: 0;
+	    top: 0;
+	    right: 0;
+	    padding: 1rem;
+	    background-color: $brokenWhite;
+	    opacity: 0;
+	    transition: .35s ease-out;
+	    transform: translateZ(100px);
+	    min-height: calc(100% - 2rem);
+	    pointer-events: none;
+	    max-height: calc(100% - 2rem);
+    	overflow: auto;
+
+	    &.active {
+	    	pointer-events: auto;
+	    	opacity: 1;
+	    	transform: translateZ(0px);
+	    }
+
+	    h2.title {
+	    	font-family: monospace;
+		    font-size: 3em;
+		    text-align: center;
+		    margin-bottom: 1rem;
+		    color: #282828;
+		    font-weight: bold;
+		    text-shadow: 1px 1px 1px #888;
+	    }
+
+	    .list {
+		    max-width: 70rem;
+	    	margin: 1rem auto;
+    	
+	    	.list-item {
+	    		display: flex;
+	    		justify-content: flex-start;
+	    		overflow: hidden;
+
+	    		.name {
+	    			display: inline-block;
+    				padding: .75em;
+	    			flex-basis: 33%;
+	    			background-color: transparent;
+	    			cursor: default;
+	    		}
+
+	    		.labels {
+	    			flex-basis: 66%;
+	    			box-shadow: inset 2px 0px 4px 0px #333;
+	    		}
+	    	}
+	    }
+
+	    &[data-section-id="users"] {
+
+    		.name {
+    			cursor: pointer !important;
+    			&:hover {
+    				background-color: rgba(189, 10, 10, 0.5);
+    			}
+    			&.active {
+    				background-color: rgba(189, 10, 10, 0.75);
+    			}
+    		}
+
+	    	.labels {
+	    		position: relative;
+	    		cursor: pointer;
+
+		    	&:before {
+				    content: "Manage roles";
+				    position: absolute;
+				    left: 0;
+				    top: 0;
+				    right: 0;
+				    bottom: 0;
+				    background-color: rgba(117, 177, 55, 0.75);
+				    color: white;
+				    font-size: 1em;
+				    text-align: center;
+				    padding-top: .75em;
+				    opacity: 0;
+				    transition: .25s ease;
+				    pointer-events: none;
+    				text-shadow: 1px 1px 2px #111;
+		    	}
+
+		    	&:hover {
+		    		&:before {
+		    			opacity: 1;
+		    		}
+		    	}
+
+	    	}
+	    }
+
+	    .actions {
+	    	display: flex;
+		    justify-content: space-around;
+		    flex-wrap: wrap;
+	    }
+		}
+	}
+}
+
+
+
+.label-box {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.25);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 0 .5rem;
+
+	.label {
+		background-color: rgba(0, 0, 0, .75);
+    color: white;
+    padding: .25rem .5rem;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px #333;
+    margin: .5rem;
+	}
+}
+
+.list {
+	.list-item {
+		border: 1px solid #444;
+		border-style: hidden solid solid solid;
+
+		&:first-child {
+			border-style: solid;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+
+		&:last-child {
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+
+	}
+}
+
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(250, 250, 250, 0.95);
+  opacity: 0;
+  transition: .25s ease;
+ 	cursor: default;
+
+  &.visible {
+  	opacity: 1;
+  }
+
+  .content {
+		max-width: 25rem;
+		display: block;
+		margin: 3rem auto 1rem;
+		text-align: center;
+  }
+
+  .close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin: .5rem;
+		font-size: 3em;
+		color: #333;
+  }
+
+  .title {
+  	font-size: 1.5em;
+    margin-bottom: .5rem;
+    display: block;
+    line-height: 1.5em;
+  }
+
+  .desc {
+  	color: #444;
+    font-size: .8em;
+    margin-bottom: 1.5rem;
+
+    &[data-emphasis="low"] {
+    	font-weight: bold;
+    	font-size: 1em;
+    }
+    &[data-emphasis="medium"] {
+    	font-weight: bold;
+    	font-size: 1.2em;
+    }
+    &[data-emphasis="high"] {
+    	font-weight: bold;
+    	font-size: 1.2em;
+    	color: red;
+    }
+    &[data-emphasis="maximum"] {
+	    font-weight: bold;
+	    font-size: 1.2em;
+	    color: red;
+	    border: 2px solid red;
+	    padding: .25em;
+    }
+    &[data-emphasis="OMG"] {
+	    font-weight: bold;
+	    font-size: 1.2em;
+	    color: red;
+	    border: 2px solid red;
+	    padding: .25em;
+	    animation: OMG .25s linear infinite normal;
+
+	    @keyframes OMG {
+		    50% {
+		    	background-color: red;
+		    	color: white;
+		    }
+		    51% {
+		    	background-color: white;
+		    	color: red;
+		    }
+			}
+    }
+  }
+
+  .list {
+  	.list-item {
+  		width: 100%;
+		  justify-content: center !important;
+		  padding: 1rem;
+		  max-width: calc(100% - 2rem - 2px);
+			transition: .25s ease;
+
+		  &:hover {
+		  	background-color: rgba(117, 177, 55, 0.25);
+		  }
+
+		  &.active {
+		  	background-color: rgba(117, 177, 55, 0.75);
+		  	&:hover {
+		  		background-color: rgba(117, 177, 55, 0.6);
+		  	}
+		  }
+
+  	}
+  }
+}
+
+
+
+@media (max-width:768px)	{
+	.container {
+		flex-direction: column-reverse;
+		[data-section-id] {
+			display: inline-block;
+		}
+	}
+}

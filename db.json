@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "guest.perez",
+      "rolesId": [
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "username": "guest.garcia",
+      "rolesId": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "username": "user.perez",
+      "rolesId": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "username": "super.admin",
+      "rolesId": [
+        2,
+        3
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "guest",
+      "permissions": [
+        "READ"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "user",
+      "permissions": [
+        "READ",
+        "WRITE"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "admin",
+      "permissions": [
+        "READ",
+        "WRITE",
+        "DELETE"
+      ]
+    }
+  ]
+}
