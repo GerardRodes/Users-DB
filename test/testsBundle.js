@@ -3684,7 +3684,7 @@ describe('App', function () {
 
 		var instance = (0, _tests.fakeComponent)(new _Main2.default());
 
-		it('Initialices', function () {
+		it('Initializes', function () {
 			_assert2.default.deepEqual(instance.state, {
 				users: [],
 				roles: [],
@@ -3706,7 +3706,7 @@ describe('App', function () {
 
 		var instance = (0, _tests.fakeComponent)(new _ListUsers2.default());
 
-		it('Initialices', function () {
+		it('Initializes', function () {
 			_assert2.default.deepEqual(instance.state, {
 				modalIsOpen: false,
 				modalIsVisible: false,
@@ -3724,7 +3724,7 @@ describe('App', function () {
 
 		var instance = (0, _tests.fakeComponent)(new _RoleWidget2.default({ _user: 'test' }));
 
-		it('Initialices', function () {
+		it('Initializes', function () {
 			_assert2.default.deepEqual(instance.state, {
 				modalIsOpen: false,
 				modalIsVisible: false,
