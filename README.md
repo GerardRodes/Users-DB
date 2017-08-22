@@ -35,12 +35,12 @@ A través del código sigo una serie de convenciones a la hora de nombrar atribu
 
 Instalación
 ===========
-1.	Clonar o descargar el repositorio https://github.com/GerardRodes/Users-DB
-2.	Dentro de la carpeta descargada, asegurándote de tener Node.js y npm instalados, ejecutar el comando: `npm install`, se instalarán todas las dependencias necesarias.
-3.	Introduciendo el comando `npm start` la aplicación se iniciara en http://localhost:9000
-a.	Si al introducir `npm start` salta algún error del tipo `couldn’t resolve` instalar el paquete que se menciona con `npm install nombreDelPaquete`, o poneros en contacto conmigo para poder resolverlo.
-b.	`npm start` inicia tanto el servidor json-server como la aplicación, al estar un rato funcionando el servidor puede dejar de response, creo que se puede deber a estar ejecutando ambos comandos desde la misma instancia de la consola, se soluciona parando el proceso con `Ctrl+C` y volviendo a ejecutar `npm start`. Si el error persiste, probar a ejecutar primero el servidor con `npm run server`, y luego, en otra instancia de la consola aparte, iniciar la aplicación con `npm run dev`
-4.	Para ejecutar los tests, ejecutar el comando `npm test`.
+1. Clonar o descargar el repositorio https://github.com/GerardRodes/Users-DB.
+2. Dentro de la carpeta descargada, asegurándote de tener Node.js y npm instalados, ejecutar el comando: `npm install`, se instalarán todas las dependencias necesarias. 
+3. Introduciendo el comando `npm start` la aplicación se iniciara en http://localhost:9000.  
+	a. Si al introducir `npm start` salta algún error del tipo `couldn’t resolve` instalar el paquete que se menciona con `npm install nombreDelPaquete`, o poneros en contacto conmigo para poder resolverlo.  
+	b. `npm start` inicia tanto el servidor json-server como la aplicación, al estar un rato funcionando el servidor puede dejar de response, creo que se puede deber a estar ejecutando ambos comandos desde la misma instancia de la consola, se soluciona parando el proceso con `Ctrl+C` y volviendo a ejecutar `npm start`. Si el error persiste, probar a ejecutar primero el servidor con `npm run server`, y luego, en otra instancia de la consola aparte, iniciar la aplicación con `npm run dev`.  
+4. Para ejecutar los tests, ejecutar el comando `npm test`.
 
 Virtual DOM
 ===========
