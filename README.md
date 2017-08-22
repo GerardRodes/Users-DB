@@ -45,7 +45,7 @@ Instalación
 Virtual DOM
 ===========
 ### ¿Qué es?
- El Virtual DOM, o vDOM, es una representación virtual (en este caso, en lenguaje de JS), de la estructura de elementos, presentes en el DOM (Document Object Model).
+ El Virtual DOM, o vDOM, es una representación virtual (en este caso, en lenguaje de JS), de la estructura de elementos presentes en el DOM (Document Object Model).
 Para realizar tal representación se entiende cada elemento del DOM como un diccionario (u objeto, mencionado en el código como vNode), el cual está compuesto de tres atributos básicos:
 * El nombre del tag que lo representa (div, span, ul, li, …)
 * Las propiedades que lo conforman (desde propiedades del dom como id, class, etc hasta propiedades para el funcionamiento interno del vDOM)
