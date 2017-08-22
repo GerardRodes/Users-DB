@@ -189,25 +189,27 @@ export default class ListUsers extends Component {
 	render() {
 		return (
 			<section data-section-id="users" >
-			  <h2 class="title" >USERS</h2>
-			  <input
-			  	value={this.state.searchString}
-			  	type="text"
-			  	placeholder="Search by username"
-			  	onInput={(e) => this.handleInputUsernameSearch(e)} />
-				<ul class="list" >
-					{this.renderUsers()}
-				</ul>
-				<div class="actions">
-					<button onClick={() => {
-							this.setState({modalIsOpen: true})
-							setTimeout(() => this.setState({modalIsVisible: true}), 100)
-						}}>
-						Add a new user +
-					</button>
-					<button disabled={this.state.userSelected.id !== undefined ? null : 'disabled'}
-						onClick={(e) => this.deleteUser()} >Delete user</button>
-					{this.renderModal()}
+				<div class="content">
+				  <h2 class="title" >USERS</h2>
+				  <input
+				  	value={this.state.searchString}
+				  	type="text"
+				  	placeholder="Search by username"
+				  	onInput={(e) => this.handleInputUsernameSearch(e)} />
+					<ul class="list" >
+						{this.renderUsers()}
+					</ul>
+					<div class="actions">
+						<button onClick={() => {
+								this.setState({modalIsOpen: true})
+								setTimeout(() => this.setState({modalIsVisible: true}), 100)
+							}}>
+							Add a new user +
+						</button>
+						<button disabled={this.state.userSelected.id !== undefined ? null : 'disabled'}
+							onClick={(e) => this.deleteUser()} >Delete user</button>
+						{this.renderModal()}
+					</div>
 				</div>
 			</section>
 		)

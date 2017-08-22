@@ -27,10 +27,12 @@ export default class ListRoles extends Component {
 	render() {
 		return (
 			<section data-section-id="roles" >
-			  <h2 class="title" >ROLES</h2>
-				<ul class="list" >
-					{this.renderRoles()}
-				</ul>
+				<div class="content">
+				  <h2 class="title" >ROLES</h2>
+					<ul class="list" >
+						{this.renderRoles()}
+					</ul>
+				</div>
 			</section>
 		)
 	}
